@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 
-import { Header } from './src/components/common';
 import reducers from './src/reducers';
-import LoginForm from './src/components/LoginForm';
+import Router from './src/Router';
 
 export default class App extends Component {
 
@@ -20,6 +18,7 @@ export default class App extends Component {
       storageBucket: 'manager-19688.appspot.com',
       messagingSenderId: '606603529672'
     };
+
     firebase.initializeApp(config);
   }
   
@@ -28,10 +27,7 @@ export default class App extends Component {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
     return (
       <Provider store={store}>
-        <View style={{ flex: 1 }}>
-          <Header headerText='Manager' />
-          <LoginForm />
-        </View>
+        <Router />
       </Provider>
     );
   }
