@@ -1,5 +1,5 @@
 import {
-  EMPLOYEE_CREATE,
+  EMPLOYEE_CREATE, EMPLOYEE_DELETE,
   EMPLOYEE_SAVE,
   EMPLOYEE_UPDATE
 } from '../actions/types';
@@ -16,6 +16,7 @@ export default (state = INITIAL_STATE, action) => {
       return {...state, [action.payload.prop]: action.payload.value};
     case EMPLOYEE_CREATE:
     case EMPLOYEE_SAVE:
+    case EMPLOYEE_DELETE:
       return INITIAL_STATE;
     default:
       return state;

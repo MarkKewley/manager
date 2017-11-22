@@ -9,4 +9,5 @@ export const LOGIN_USER_FAILED = 'login_user_failed';
 export const EMPLOYEE_UPDATE = 'employee_update';
 export const EMPLOYEE_CREATE = 'employee_create';
 export const EMPLOYEE_SAVE = 'employee_save';
+export const EMPLOYEE_DELETE = 'employee_delete';
 export const EMPLOYEES_FETCH_SUCCESS = 'employee_fetch_success';
